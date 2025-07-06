@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
 import 'package:energy_measures_marketplace/core/firebase_options.dart';
 import 'package:energy_measures_marketplace/core/routes.dart' as routes;
@@ -10,12 +11,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+  await EasyLocalization.ensureInitialized();
   await service_registration.init();
 
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: [Locale('de'), Locale('fr'), Locale('it')],
+      path: 'assets/translations/',
+      fallbackLocale: Locale('de'),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,8 +40,11 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         debugShowCheckedModeBanner: false,
-        title: 'Energy Measures Marketplace DEV',
+        title: 'Energiesparmassnahmen Handelsplattform',
         routes: routes.getRoutes(context),
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -50,8 +60,13 @@ class MyApp extends StatelessWidget {
             ),
           ),
           appBarTheme: AppBarTheme(
-            color: Colors.deepPurple.shade200
-          )
+            color: Colors.deepPurple.shade200,
+            elevation: 4,
+          ),
+          drawerTheme: DrawerThemeData(
+            backgroundColor: Colors.deepPurple.shade50,
+            elevation: 3,
+          ),
         ),
         home: const LoginScreen(title: 'Energy Measures Marketplace DEV'),
       ),

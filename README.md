@@ -58,3 +58,13 @@ Cmd+Option+I
 
 # Hot reload
 Command + s
+
+# Farbcodes
+Violett Hell	#E9D9F1
+Violett Mittel	#CBA5E0
+Violett Klar	#9B5DC9
+Violett Dunkel	#6B2F99
+Grau Hell	#F2F2F2
+Grau Mittelhell	#D9D9D9
+Grau Mittel	#A6A6A6
+Grau Dunkel	#595959
