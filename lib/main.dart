@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Energy Measures Marketplace DEV',
         routes: routes.getRoutes(context),
         theme: ThemeData(
@@ -48,6 +49,9 @@ class MyApp extends StatelessWidget {
               elevation: 7.0,
             ),
           ),
+          appBarTheme: AppBarTheme(
+            color: Colors.deepPurple.shade200
+          )
         ),
         home: const LoginScreen(title: 'Energy Measures Marketplace DEV'),
       ),
