@@ -1,0 +1,56 @@
+import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
+import 'package:energy_measures_marketplace/core/firebase_options.dart';
+import 'package:energy_measures_marketplace/core/routes.dart' as routes;
+import 'package:energy_measures_marketplace/services/service_registration.dart'
+    as service_registration;
+import 'package:energy_measures_marketplace/presentation/screens/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await service_registration.init();
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthenticationBloc>(
+          create:
+              (BuildContext context) =>
+                  AuthenticationBloc(), //Initialisiert den AuthenticationBloc
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Energy Measures Marketplace DEV',
+        routes: routes.getRoutes(context),
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+          inputDecorationTheme: InputDecorationTheme(
+            filled: true,
+            fillColor: Colors.lightBlueAccent.shade100,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(200, 50),
+              elevation: 7.0,
+            ),
+          ),
+        ),
+        home: const LoginScreen(title: 'Energy Measures Marketplace DEV'),
+      ),
+    );
+  }
+}

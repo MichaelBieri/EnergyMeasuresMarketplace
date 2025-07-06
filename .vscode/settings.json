@@ -1,0 +1,8 @@
+{
+    "files.autoSave": "afterDelay",
+    "dart.flutterHotReloadOnSave": "all",
+    "dartImport.fixOnSave": true,
+    "dart.hotReloadProgress": "statusBar",
+    "dart.hotReloadOnSave": "all",
+  }
+  

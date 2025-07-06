@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "833668235764",
+    "project_id": "marketplaceapp-edc72",
+    "storage_bucket": "marketplaceapp-edc72.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833668235764:android:ec8bfd23af2c0e0e52f9a1",
+        "android_client_info": {
+          "package_name": "com.example.energy_measures_marketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpkw5LGdVh5i4kMv-Bh3TBAAT1_GY_2U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833668235764:android:5a29dc5c8157494752f9a1",
+        "android_client_info": {
+          "package_name": "com.example.marketplaceapp_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpkw5LGdVh5i4kMv-Bh3TBAAT1_GY_2U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
