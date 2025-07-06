@@ -16,19 +16,21 @@ class NavigationDrawerWidget extends StatelessWidget {
 
           ListTile(
             leading: const Icon(Icons.flag),
-            title: const Text("Sprache"),
-            onTap: () {},
+            //title: Text(translate('sidebar_changelanguage')),
+            onTap: () {
+              String currentLanguage = Localizations.localeOf(context).languageCode;
+            },
           ),
 
           ListTile(
             leading: const Icon(Icons.dark_mode),
-            title: const Text("Dark Mode"),
+            //title: const Text(translate('sidebar_changedarkmode')),
             onTap: () {},
           ),
 
           ListTile(
             leading: const Icon(Icons.exit_to_app),
-            title: const Text("sidebar_logout"),
+            //title: const Text(translate('sidebar_changelogout')),
             onTap: () {},
           ),
         ],
