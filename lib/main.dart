@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
+import 'package:energy_measures_marketplace/blocs/theme_bloc/theme_bloc.dart';
 import 'package:energy_measures_marketplace/core/firebase_options.dart';
 import 'package:energy_measures_marketplace/core/routes.dart' as routes;
+import 'package:energy_measures_marketplace/core/themes/dark_theme.dart';
+import 'package:energy_measures_marketplace/core/themes/light_theme.dart';
 import 'package:energy_measures_marketplace/services/service_registration.dart'
     as service_registration;
-import 'package:energy_measures_marketplace/presentation/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +18,12 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('de'), Locale('fr'), Locale('it')],
+      supportedLocales: [
+        Locale('de'),
+        Locale('fr'),
+        Locale('it'),
+        Locale('en'),
+      ],
       path: 'assets/translations/',
       fallbackLocale: Locale('de'),
       child: MyApp(),
@@ -38,38 +44,33 @@ class MyApp extends StatelessWidget {
               (BuildContext context) =>
                   AuthenticationBloc(), //Initialisiert den AuthenticationBloc
         ),
+        BlocProvider<ThemeBloc>(create: (BuildContext context) => ThemeBloc()),
       ],
-      child: MaterialApp(
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        debugShowCheckedModeBanner: false,
-        title: 'Energiesparmassnahmen Handelsplattform',
-        routes: routes.getRoutes(context),
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-          inputDecorationTheme: InputDecorationTheme(
-            filled: true,
-            fillColor: Colors.lightBlueAccent.shade100,
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(200, 50),
-              elevation: 7.0,
-            ),
-          ),
-          appBarTheme: AppBarTheme(
-            color: Colors.deepPurple.shade200,
-            elevation: 4,
-          ),
-          drawerTheme: DrawerThemeData(
-            backgroundColor: Colors.deepPurple.shade50,
-            elevation: 3,
-          ),
-        ),
-        home: const LoginScreen(title: 'Energy Measures Marketplace DEV'),
+      child: BlocBuilder<ThemeBloc, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            localizationsDelegates: context.localizationDelegates, //Falsch?
+            supportedLocales: context.supportedLocales, // Falsch?
+            locale: context.locale, // Falsch?
+            debugShowCheckedModeBanner: false,
+            title: 'Handelsplattform für Energiesparmassnahmen',
+            routes: routes.getRoutes(context),
+            themeMode: ThemeMode.system,
+            theme: getTheme(state),
+            darkTheme: getDarkTheme(),
+            //home: const LoginScreen(title: 'Energy Measures Marketplace DEV'),
+          );
+        },
       ),
     );
   }
+
+getTheme(ThemeState state){
+  if(state is ThemeInitial) return getLightTheme();
+
+  if(state is LightThemeState) return getLightTheme();
+
+  if(state is DarkThemeState) return getDarkTheme();
+}
+  
 }

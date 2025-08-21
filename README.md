@@ -1,20 +1,4 @@
 # EnergyCertificateMarketplace
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
 # Code
 flutter run -d chrome --web-experimental-hot-reload
 
@@ -38,10 +22,6 @@ Shift + Option + A
 tab
 -nach links
 shift + tab
-
-# login
-michib1992@gmx.ch
-Finland1992
 
 # Hot reload
 --web-experimental-hot-reload
@@ -68,3 +48,21 @@ Grau Hell	#F2F2F2
 Grau Mittelhell	#D9D9D9
 Grau Mittel	#A6A6A6
 Grau Dunkel	#595959
+
+# Next
+Das es zum Home Screen geht nach dem anmelden - Video 137
+
+# Dart fix funktionen
+dart fix --dry-run
+dart fix --apply
+dart format
+
+# Start
+Control + F5 um das Programm zu starten
+
+# Firebase App Id
+web       1:833668235764:web:9d61f602b25bb33f52f9a1
+
+# Aktuell
+Versuchen das Firebase-Login zu entwickeln.
+https://www.youtube.com/watch?v=IT_R6HitAWg

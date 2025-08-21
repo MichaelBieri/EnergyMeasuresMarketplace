@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 
-// Inputfelder die alle gleich aussehen
-
-// ignore: must_be_immutable
+/// A reusable input field widget with a consistent style.
 class InputField extends StatelessWidget {
+  /// Controller for the text field.
   final TextEditingController textEditingController;
-  final String labelText;
-  bool? hidden = false;
-  IconData? iconData;
-  String? Function(String?)? validator;
 
-  InputField({
+  /// The label text for the input field.
+  final String labelText;
+
+  /// Whether to hide the text (e.g., for passwords).
+  final bool hidden;
+
+  /// The icon to display before the input area.
+  final IconData? iconData;
+
+  /// Optional validator function for the input.
+  final String? Function(String?)? validator;
+
+  /// Creates an [InputField].
+  const InputField({
     super.key,
     required this.textEditingController,
     required this.labelText,
@@ -29,7 +37,7 @@ class InputField extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withValues(alpha: 50),
+              color: Colors.grey.withAlpha(50),
               spreadRadius: 3,
               blurRadius: 6,
               offset: const Offset(0, 3), // changes position of shadow
@@ -37,25 +45,16 @@ class InputField extends StatelessWidget {
           ],
         ),
         child: TextFormField(
-          validator: validator ?? (value) => null,
+          validator: validator,
           controller: textEditingController,
-          obscureText: hidden ?? false,
+          obscureText: hidden,
           decoration: InputDecoration(
-            prefixIcon: getIcon(), // Hinten dran kommt das Label
+            prefixIcon: iconData != null ? Icon(iconData) : null,
             border: const OutlineInputBorder(),
             labelText: labelText,
           ),
         ),
       ),
     );
-  }
-
-  Widget? getIcon() { //Wie if else. 
-    if (iconData != null) {
-      // Wenn ein Icon vorhanden ist, wird es angezeigt
-      return Icon(iconData);
-    }
-
-    return null; // Wird nie ausgeführt, IconData ist null
   }
 }

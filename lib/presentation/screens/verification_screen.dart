@@ -1,3 +1,5 @@
+
+/*
 import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
 import 'package:energy_measures_marketplace/core/bloc_state_type.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +17,10 @@ class VerificationScreen extends StatefulWidget {
 class _VerificationScreenState extends State<VerificationScreen> {
   // Methoden
   Widget blocBuilder(context, state) {
-      if (state.stateType == BlocStateType.loading) {
-        return const CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
-        );
-        
+    if (state.stateType == BlocStateType.loading) {
+      return const CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
+      );
     } else {
       return Container();
     }
@@ -79,7 +80,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
             Expanded(
               flex: 3,
               child: Container(
-                width: double.infinity, //Container nimt ganze Bildschirm breite ein
+                width:
+                    double
+                        .infinity, //Container nimt ganze Bildschirm breite ein
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -150,3 +153,5 @@ class _VerificationScreenState extends State<VerificationScreen> {
     );
   }
 }
+
+*/

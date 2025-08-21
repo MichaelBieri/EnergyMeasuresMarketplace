@@ -4,18 +4,17 @@ import 'package:energy_measures_marketplace/domain/interfaces/authentication_int
 class FirebaseAuthService implements AuthenticationInterface {
     
   @override
-  Future<bool> login(String email, String password) async {
+  Future<bool> logIn(String email, String password) async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      if (FirebaseAuth.instance.currentUser != null) {
-        return true;
-      }
-
-      return false;
+      // If signInWithEmailAndPassword does not throw an exception, the login was successful.
+      return true;
     } catch (e) {
+      // It's a good practice to log the error for debugging.
+      // For example: print(e);
       return false;
     }
   }
@@ -35,13 +34,11 @@ class FirebaseAuthService implements AuthenticationInterface {
         email: email,
         password: password,
       );
-
-      if (FirebaseAuth.instance.currentUser != null) {
-        return true;
-      }
-
-      return false;
+      // If createUserWithEmailAndPassword does not throw an exception, the registration was successful.
+      return true;
     } catch (e) {
+      // It's a good practice to log the error for debugging.
+      // For example: print(e);
       return false;
     }
   }
@@ -62,5 +59,10 @@ class FirebaseAuthService implements AuthenticationInterface {
     } else {
       await FirebaseAuth.instance.currentUser!.sendEmailVerification();
     }
+  }
+  
+  @override
+  Future logout() async{
+    await FirebaseAuth.instance.signOut();
   }
 }

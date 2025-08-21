@@ -1,4 +1,5 @@
-import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
+/*
+import 'package:energy_measures_marketplace/blocs/authentication_bloc/authentication_bloc.dart';
 import 'package:energy_measures_marketplace/core/bloc_state_type.dart';
 import 'package:energy_measures_marketplace/core/validators/email_validator.dart';
 import 'package:energy_measures_marketplace/core/validators/password_validator.dart';
@@ -19,12 +20,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
-  
+
   Widget blocBuilder(context, state) {
     if (state.stateType == BlocStateType.loading) {
       return const CircularProgressIndicator(
@@ -132,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Form(
                     key: _formKey,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,  
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const SizedBox(height: 50.0),
 
@@ -185,19 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         const SizedBox(height: 20.0),
 
-                        /* // Registration Button
-                        ElevatedButton( 
-                          style: ElevatedButton.styleFrom(
-                            minimumSize:  const Size(200, 50),
-                          ),
-                          onPressed: () async {
-                            BlocProvider.of<AuthenticationBloc>(context).add(
-                              RegistrationEvent(_usernameController.text, _usernameController.text, _passwordController.text));
-                          },
-                          child: const Text('Registrieren'),
-                        ), */
-                        RegistrationOrLoginText(
-                          onTap: () {
+                        RegistrationOrLoginText(onTap: () {
                             Navigator.popAndPushNamed(context, routes.registrationRoute);
                           },
                           text1: "Ich habe noch kein Konto? ",
@@ -215,3 +203,4 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+*/

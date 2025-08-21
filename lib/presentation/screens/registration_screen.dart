@@ -1,4 +1,6 @@
-import 'package:energy_measures_marketplace/blocs/authentication_bloc.dart';
+/*
+
+import 'package:energy_measures_marketplace/blocs/authentication_bloc/authentication_bloc.dart';
 import 'package:energy_measures_marketplace/core/bloc_state_type.dart';
 import 'package:energy_measures_marketplace/presentation/views/input_field.dart';
 import 'package:energy_measures_marketplace/presentation/views/registration_login_text.dart';
@@ -17,7 +19,9 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _confirmEmailController = TextEditingController(); 
   final TextEditingController _passwordController = TextEditingController();
+
 
 
 // Methoden
@@ -155,7 +159,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
                       // Email2
                       InputField(
-                        textEditingController: _usernameController,
+                        textEditingController: _confirmEmailController,
                         labelText: "Bestätige Mail" ,
                         iconData: Icons.person,
                       ),
@@ -174,7 +178,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ElevatedButton(
                         onPressed: () async {
                           BlocProvider.of<AuthenticationBloc>(context).add(
-                              RegistrationEvent(_usernameController.text, _usernameController.text, _passwordController.text),
+                              RegistrationEvent(_usernameController.text, _confirmEmailController, _passwordController.text),
                           );
                         },
                         child: const Text('Registrieren'),
@@ -198,3 +202,5 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 }
+
+*/

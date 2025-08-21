@@ -1,13 +1,13 @@
 {
     "sidebar_changelanguage": "Sprache",
     "sidebar_changedarkmode": "Dark mode",
-    "sidebar_changehome": "Home",
-    "sidebar_changebuy": "Kaufen",
-    "sidebar_changesell": "Verkaufen",
-    "sidebar_changecart": "Warenkorb",
-    "sidebar_changeprofil": "Profil",
-    "sidebar_changelogout": "Logout",
-    "sidebar_changeregulation": "RRegulierung",
-    "sidebar_changeinstructions": "Anleitung",
-    "sidebar_changesettings": "Einstellungen"
+    "sidebar_home": "Home",
+    "sidebar_buy": "Kaufen",
+    "sidebar_sell": "Verkaufen",
+    "sidebar_cart": "Warenkorb",
+    "sidebar_profil": "Profil",
+    "sidebar_logout": "Logout",
+    "sidebar_regulation": "RRegulierung",
+    "sidebar_instructions": "Anleitung",
+    "sidebar_settings": "Einstellungen"
 }

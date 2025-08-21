@@ -1,6 +1,6 @@
 String? emailValidator(String? input) {
   if (input == null || input.isEmpty) {
-    return "Bitte geben sie etwas ein";
+    return "Bitte Ihre Eingabe";
   }
 
   if(!input.contains('@') && !input.contains('.')) {

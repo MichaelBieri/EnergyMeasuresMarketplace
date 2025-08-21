@@ -1,3 +1,5 @@
+/*
+
 import 'package:flutter/material.dart';
 
 class RegistrationOrLoginText extends StatelessWidget {
@@ -29,3 +31,4 @@ class RegistrationOrLoginText extends StatelessWidget {
     );
   }
 }
+*/

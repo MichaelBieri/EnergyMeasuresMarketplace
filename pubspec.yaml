@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.7.0 #">=2.12.0 <3.0.0" ab 2.12.0 sind null safety features verfügbar
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -41,6 +41,7 @@ dependencies:
   bloc: ^9.0.0
   flutter_bloc: ^9.1.1
   easy_localization: ^3.0.7+1
+  meta: ^1.16.0
 
 
 dev_dependencies:

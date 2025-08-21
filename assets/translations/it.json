@@ -1,13 +1,13 @@
 {
     "sidebar_changelanguage": "Lingua",
     "sidebar_changedarkmode": "Modalità scura",
-    "sidebar_changehome": "Home",
-    "sidebar_changebuy": "Compra",
-    "sidebar_changesell": "Vendi",
-    "sidebar_changecart": "Carrello",
-    "sidebar_changeprofil": "Profilo",
-    "sidebar_changelogout": "Disconnetti",
-    "sidebar_changeregulation": "Regolamentazione",
-    "sidebar_changeinstructions": "Istruzioni",
-    "sidebar_changesettings": "Impostazioni"
+    "sidebar_home": "Home",
+    "sidebar_buy": "Compra",
+    "sidebar_sell": "Vendi",
+    "sidebar_cart": "Carrello",
+    "sidebar_profil": "Profilo",
+    "sidebar_logout": "Disconnetti",
+    "sidebar_regulation": "Regolamentazione",
+    "sidebar_instructions": "Istruzioni",
+    "sidebar_settings": "Impostazioni"
 }
